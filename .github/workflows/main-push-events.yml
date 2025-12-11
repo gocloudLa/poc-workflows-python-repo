@@ -32,5 +32,6 @@ jobs:
       aws_role_arn_prod: ${{ needs.prepare-secrets.outputs.aws_role_arn_prod }}
       aws_region: ${{ needs.prepare-secrets.outputs.aws_region }}
       service_name: python-service
+      language: python
     secrets: inherit
 
