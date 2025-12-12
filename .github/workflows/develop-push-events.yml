@@ -36,7 +36,11 @@ jobs:
 
   test-aws-oidc-action-2:
     name: test-aws-oidc-action-2
+    needs: prepare-secrets
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - name: Configure AWS credentials using GitHub Action
         uses: aws-actions/configure-aws-credentials@v4
@@ -52,7 +56,11 @@ jobs:
 
   test-aws-oidc-action-3:
     name: test-aws-oidc-action-3
+    needs: prepare-secrets
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - name: Configure AWS credentials using GitHub Action
         uses: aws-actions/configure-aws-credentials@v5
