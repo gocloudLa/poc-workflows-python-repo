@@ -26,7 +26,7 @@ jobs:
 
   main-push-events:
     needs: prepare-secrets
-    uses: gocloudLa/poc-workflows-shared/.github/workflows/shared-main-push-events.yml@main
+    uses: gocloudLa/poc-workflows-shared/.github/workflows/shared-main-push-events-python.yml@main
     with:
       ecr_repository_url: ${{ needs.prepare-secrets.outputs.ecr_repository_url }}
       aws_role_arn_shared: ${{ needs.prepare-secrets.outputs.aws_role_arn_shared }}
@@ -34,6 +34,5 @@ jobs:
       aws_role_arn_prod: ${{ needs.prepare-secrets.outputs.aws_role_arn_prod }}
       aws_region: ${{ needs.prepare-secrets.outputs.aws_region }}
       service_name: python-service
-      language: python
     secrets: inherit
 
