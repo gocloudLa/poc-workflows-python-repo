@@ -15,14 +15,24 @@ jobs:
   prepare-secrets:
     runs-on: ubuntu-latest
     outputs:
-      ecr_repository_url: ${{ secrets.ECR_REPOSITORY_URL }}
-      aws_role_arn_shared: ${{ secrets.AWS_ROLE_ARN_SHARED }}
-      aws_role_arn_staging: ${{ secrets.AWS_ROLE_ARN_STAGING }}
-      aws_role_arn_prod: ${{ secrets.AWS_ROLE_ARN_PROD }}
-      aws_region: ${{ secrets.AWS_REGION != '' && secrets.AWS_REGION || 'us-east-1' }}
+      ecr_repository_url: ${{ steps.set-outputs.outputs.ecr_repository_url }}
+      aws_role_arn_shared: ${{ steps.set-outputs.outputs.aws_role_arn_shared }}
+      aws_role_arn_staging: ${{ steps.set-outputs.outputs.aws_role_arn_staging }}
+      aws_role_arn_prod: ${{ steps.set-outputs.outputs.aws_role_arn_prod }}
+      aws_region: ${{ steps.set-outputs.outputs.aws_region }}
     steps:
-      - name: Prepare secrets
-        run: echo "Secrets prepared"
+      - name: Prepare secrets and set outputs
+        id: set-outputs
+        run: |
+          echo "ecr_repository_url=${{ secrets.ECR_REPOSITORY_URL }}" >> $GITHUB_OUTPUT
+          echo "aws_role_arn_shared=${{ secrets.AWS_ROLE_ARN_SHARED }}" >> $GITHUB_OUTPUT
+          echo "aws_role_arn_staging=${{ secrets.AWS_ROLE_ARN_STAGING }}" >> $GITHUB_OUTPUT
+          echo "aws_role_arn_prod=${{ secrets.AWS_ROLE_ARN_PROD }}" >> $GITHUB_OUTPUT
+          AWS_REGION="${{ secrets.AWS_REGION }}"
+          if [ -z "$AWS_REGION" ]; then
+            AWS_REGION="us-east-1"
+          fi
+          echo "aws_region=${AWS_REGION}" >> $GITHUB_OUTPUT
 
   main-push-events:
     needs: prepare-secrets
