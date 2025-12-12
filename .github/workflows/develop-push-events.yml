@@ -12,64 +12,14 @@ permissions:
   security-events: write
 
 jobs:
-  prepare-secrets:
-    runs-on: ubuntu-latest
-    outputs:
-      ecr_repository_url: ${{ steps.set-outputs.outputs.ecr_repository_url }}
-      aws_role_arn_shared: ${{ steps.set-outputs.outputs.aws_role_arn_shared }}
-      aws_role_arn_dev: ${{ steps.set-outputs.outputs.aws_role_arn_dev }}
-      aws_region: ${{ steps.set-outputs.outputs.aws_region }}
-    steps:
-      - name: Prepare secrets and set outputs
-        id: set-outputs
-        run: |
-          echo "Debug: Checking if secrets are set (not showing values)"
-          if [ -z "${{ secrets.ECR_REPOSITORY_URL }}" ]; then
-            echo "ERROR: ECR_REPOSITORY_URL secret is empty!"
-            exit 1
-          else
-            echo "✓ ECR_REPOSITORY_URL is set"
-            echo "ecr_repository_url=${{ secrets.ECR_REPOSITORY_URL }}" >> $GITHUB_OUTPUT
-          fi
-          if [ -z "${{ secrets.AWS_ROLE_ARN_SHARED }}" ]; then
-            echo "ERROR: AWS_ROLE_ARN_SHARED secret is empty!"
-            exit 1
-          else
-            echo "✓ AWS_ROLE_ARN_SHARED is set"
-            echo "aws_role_arn_shared=${{ secrets.AWS_ROLE_ARN_SHARED }}" >> $GITHUB_OUTPUT
-          fi
-          if [ -z "${{ secrets.AWS_ROLE_ARN_DEV }}" ]; then
-            echo "ERROR: AWS_ROLE_ARN_DEV secret is empty!"
-            exit 1
-          else
-            echo "✓ AWS_ROLE_ARN_DEV is set"
-            echo "aws_role_arn_dev=${{ secrets.AWS_ROLE_ARN_DEV }}" >> $GITHUB_OUTPUT
-          fi
-          AWS_REGION="${{ secrets.AWS_REGION }}"
-          if [ -z "$AWS_REGION" ]; then
-            AWS_REGION="us-east-1"
-          fi
-          echo "aws_region=${AWS_REGION}" >> $GITHUB_OUTPUT
-          echo "Output values that will be passed:"
-          echo "ecr_repository_url: '${{ secrets.ECR_REPOSITORY_URL }}'"
-          echo "aws_role_arn_shared: '${{ secrets.AWS_ROLE_ARN_SHARED }}'"
-          echo "aws_role_arn_dev: '${{ secrets.AWS_ROLE_ARN_DEV }}'"
-          echo "aws_region: '${AWS_REGION}'"
-
   develop-push-events:
-    needs: prepare-secrets
     uses: gocloudLa/poc-workflows-shared/.github/workflows/shared-develop-push-events-python.yml@main
     with:
-      ecr_repository_url: ${{ needs.prepare-secrets.outputs.ecr_repository_url }}
-      aws_role_arn_shared: ${{ needs.prepare-secrets.outputs.aws_role_arn_shared }}
-      aws_role_arn_dev: ${{ needs.prepare-secrets.outputs.aws_role_arn_dev }}
-      aws_region: ${{ needs.prepare-secrets.outputs.aws_region }}
       service_name: python-service
     secrets: inherit
 
   test-aws-oidc-action-2:
     name: test-aws-oidc-action-2
-    needs: prepare-secrets
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -78,7 +28,7 @@ jobs:
       - name: Configure AWS credentials using GitHub Action
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ needs.prepare-secrets.outputs.aws_role_arn_shared }}
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN_SHARED }}
           aws-region: us-east-2
 
       - name: Verify AWS identity
@@ -89,7 +39,6 @@ jobs:
 
   test-aws-oidc-action-3:
     name: test-aws-oidc-action-3
-    needs: prepare-secrets
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -98,7 +47,7 @@ jobs:
       - name: Configure AWS credentials using GitHub Action
         uses: aws-actions/configure-aws-credentials@v5
         with:
-          role-to-assume: ${{ needs.prepare-secrets.outputs.aws_role_arn_shared }}
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN_SHARED }}
           aws-region: us-east-2
 
       - name: Verify AWS identity
