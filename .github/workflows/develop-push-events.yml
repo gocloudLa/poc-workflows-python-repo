@@ -1,0 +1,19 @@
+name: "Develop Push Events Workflow"
+
+on:
+  push:
+    branches: [develop]
+
+permissions:
+  pull-requests: write
+  id-token: write
+  contents: read
+  actions: read
+  security-events: write
+
+jobs:
+  develop-push-events:
+    uses: gocloudLa/poc-workflows-shared/.github/workflows/shared-develop-push-events-python.yml@main
+    with:
+      service_name: python-service
+    secrets: inherit
