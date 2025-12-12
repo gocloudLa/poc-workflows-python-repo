@@ -34,3 +34,36 @@ jobs:
       service_name: python-service
     secrets: inherit
 
+  test-aws-oidc-action-2:
+    name: test-aws-oidc-action-2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure AWS credentials using GitHub Action
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ needs.prepare-secrets.outputs.aws_role_arn_shared }}
+          aws-region: us-east-2
+
+      - name: Verify AWS identity
+        run: aws sts get-caller-identity
+
+      - name: Test AWS S3 access
+        run: aws s3 ls
+
+  test-aws-oidc-action-3:
+    name: test-aws-oidc-action-3
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure AWS credentials using GitHub Action
+        uses: aws-actions/configure-aws-credentials@v5
+        with:
+          role-to-assume: ${{ needs.prepare-secrets.outputs.aws_role_arn_shared }}
+          aws-region: us-east-2
+
+      - name: Verify AWS identity
+        run: aws sts get-caller-identity
+
+      - name: Test AWS S3 access
+        run: aws s3 ls
+
+
