@@ -1,3 +1,11 @@
+# [1.4.0](https://github.com/gocloudLa/poc-workflows-python-repo/compare/v1.3.0...v1.4.0) (2026-01-05)
+
+
+### Features
+
+* integration poc 5 ([#28](https://github.com/gocloudLa/poc-workflows-python-repo/issues/28)) ([d526529](https://github.com/gocloudLa/poc-workflows-python-repo/commit/d5265292c6d437b5cf3de7e6914551c207a14e13))
+* test poc 5 ([#27](https://github.com/gocloudLa/poc-workflows-python-repo/issues/27)) ([8ab58fc](https://github.com/gocloudLa/poc-workflows-python-repo/commit/8ab58fcbeb114c535c019256aea0236c7b011307))
+
 # [1.3.0](https://github.com/gocloudLa/poc-workflows-python-repo/compare/v1.2.0...v1.3.0) (2026-01-05)
 
 
