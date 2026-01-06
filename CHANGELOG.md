@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/gocloudLa/poc-workflows-python-repo/compare/v1.5.1...v1.6.0) (2026-01-06)
+
+
+### Bug Fixes
+
+* remove unused env ([4e8213e](https://github.com/gocloudLa/poc-workflows-python-repo/commit/4e8213e00db2ab9ea2c764dbfea678de0bb39588))
+
+
+### Features
+
+* integrate features a stg 3 ([#40](https://github.com/gocloudLa/poc-workflows-python-repo/issues/40)) ([db0b53b](https://github.com/gocloudLa/poc-workflows-python-repo/commit/db0b53b0260119a9a1ce2741f01184200542af8f))
+
 ## [1.5.1](https://github.com/gocloudLa/poc-workflows-python-repo/compare/v1.5.0...v1.5.1) (2026-01-06)
 
 
