@@ -11,10 +11,6 @@ on:
         description: 'Release tag to delete (bad release)'
         required: true
         type: string
-      image_tag:
-        description: 'Current Docker image tag to rollback from'
-        required: true
-        type: string
       values_dir:
         description: 'Values folder inside ArgoCD repo'
         required: false
@@ -40,7 +36,6 @@ jobs:
     with:
       service_name: ${{ inputs.service_name }}
       environment: ${{ inputs.environment }}
-      image_tag: ${{ inputs.image_tag }}
       rollback_tag: ${{ inputs.rollback_tag }}
       release_tag_to_delete: ${{ inputs.release_tag_to_delete }}
       target_repository: ${{ inputs.target_repository }}
