@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/gocloudLa/poc-workflows-python-repo/compare/v1.6.0...v1.7.0) (2026-01-06)
+
+
+### Features
+
+* test queue merge ([#44](https://github.com/gocloudLa/poc-workflows-python-repo/issues/44)) ([2d59055](https://github.com/gocloudLa/poc-workflows-python-repo/commit/2d59055b6dd16b9bf6dada842e842d44d9eabf21))
+
 # [1.6.0](https://github.com/gocloudLa/poc-workflows-python-repo/compare/v1.5.1...v1.6.0) (2026-01-06)
 
 
