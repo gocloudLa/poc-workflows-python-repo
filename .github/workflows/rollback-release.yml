@@ -20,21 +20,6 @@ on:
         required: false
         type: string
         default: 'poc-workflows-python-repo'
-      target_repository:
-        description: 'ArgoCD repository to update (owner/repo)'
-        required: false
-        type: string
-        default: 'gocloudLa/poc-workflows-argocd-shared'
-      target_branch:
-        description: 'Target branch to update in ArgoCD repo'
-        required: false
-        type: string
-        default: 'main'
-      environment:
-        description: 'Environment name'
-        required: false
-        type: string
-        default: 'prd'
       service_name:
         description: 'Service name'
         required: false
