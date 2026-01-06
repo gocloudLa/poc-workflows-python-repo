@@ -1,0 +1,65 @@
+name: "Rollback Release"
+
+on:
+  workflow_dispatch:
+    inputs:
+      rollback_tag:
+        description: 'Release tag to deploy in production (rollback target)'
+        required: true
+        type: string
+      release_tag_to_delete:
+        description: 'Release tag to delete (bad release)'
+        required: true
+        type: string
+      image_tag:
+        description: 'Current Docker image tag to rollback from'
+        required: true
+        type: string
+      values_dir:
+        description: 'Values folder inside ArgoCD repo'
+        required: false
+        type: string
+        default: 'poc-workflows-python-repo'
+      target_repository:
+        description: 'ArgoCD repository to update (owner/repo)'
+        required: false
+        type: string
+        default: 'gocloudLa/poc-workflows-argocd-shared'
+      target_branch:
+        description: 'Target branch to update in ArgoCD repo'
+        required: false
+        type: string
+        default: 'main'
+      environment:
+        description: 'Environment name'
+        required: false
+        type: string
+        default: 'prd'
+      service_name:
+        description: 'Service name'
+        required: false
+        type: string
+        default: 'python-service'
+      skip_execution:
+        description: 'Skip workflow execution'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  rollback-release:
+    uses: gocloudLa/poc-workflows-shared/.github/workflows/rollback-mechanism.yml@main
+    with:
+      service_name: ${{ inputs.service_name }}
+      environment: ${{ inputs.environment }}
+      image_tag: ${{ inputs.image_tag }}
+      rollback_tag: ${{ inputs.rollback_tag }}
+      release_tag_to_delete: ${{ inputs.release_tag_to_delete }}
+      target_repository: ${{ inputs.target_repository }}
+      target_branch: ${{ inputs.target_branch }}
+      values_dir: ${{ inputs.values_dir }}
+      skip_execution: ${{ inputs.skip_execution }}
+    secrets: inherit
