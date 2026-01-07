@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/gocloudLa/poc-workflows-python-repo/compare/v1.9.0...v1.10.0) (2026-01-07)
+
+
+### Features
+
+* remove unused workflow ([493c033](https://github.com/gocloudLa/poc-workflows-python-repo/commit/493c033ad0cc2b7afc0992eacc7e4957d75e41ee))
+
 # [1.9.0](https://github.com/gocloudLa/poc-workflows-python-repo/compare/v1.8.0...v1.9.0) (2026-01-07)
 
 
