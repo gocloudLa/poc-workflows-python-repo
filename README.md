@@ -79,3 +79,4 @@ docker run -p 8080:8080 python-service
 - test 5
 - test 6
 - test7
+- test 8
