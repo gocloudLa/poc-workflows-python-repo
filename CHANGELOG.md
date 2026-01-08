@@ -1,3 +1,20 @@
+# [1.11.0](https://github.com/gocloudLa/poc-workflows-python-repo/compare/v1.10.0...v1.11.0) (2026-01-08)
+
+
+### Features
+
+* add merge_group ([#41](https://github.com/gocloudLa/poc-workflows-python-repo/issues/41)) ([a7240ae](https://github.com/gocloudLa/poc-workflows-python-repo/commit/a7240ae0365f4ffd561c2478cf662a1e45172695))
+* remove skip execution ([0996dc7](https://github.com/gocloudLa/poc-workflows-python-repo/commit/0996dc7e507d96f0abd624ace5d5ecdd550560b9))
+* sync branches ([#34](https://github.com/gocloudLa/poc-workflows-python-repo/issues/34)) ([794baf2](https://github.com/gocloudLa/poc-workflows-python-repo/commit/794baf28f332bb884062ad8cf636c2540806ba74))
+* test ([#52](https://github.com/gocloudLa/poc-workflows-python-repo/issues/52)) ([915b58b](https://github.com/gocloudLa/poc-workflows-python-repo/commit/915b58b393f9f9f5cdc40ebadf98ca62ee3157fe))
+* test ([#53](https://github.com/gocloudLa/poc-workflows-python-repo/issues/53)) ([a350e8d](https://github.com/gocloudLa/poc-workflows-python-repo/commit/a350e8dbcf1d4e2af0dbfc01e81e5ee59e889a01))
+* test complete flow 1 ([#35](https://github.com/gocloudLa/poc-workflows-python-repo/issues/35)) ([3e288bd](https://github.com/gocloudLa/poc-workflows-python-repo/commit/3e288bdb2e6b6664306673c44c876bc80dc68a64))
+* test complete flow 2 ([#36](https://github.com/gocloudLa/poc-workflows-python-repo/issues/36)) ([b772428](https://github.com/gocloudLa/poc-workflows-python-repo/commit/b772428eafd49296da5ca285f8a462578b29d65d))
+* test complete flow 3 ([#37](https://github.com/gocloudLa/poc-workflows-python-repo/issues/37)) ([6b7c762](https://github.com/gocloudLa/poc-workflows-python-repo/commit/6b7c76283aafa511a88ac4dfb7e93e12c937b465))
+* test flow 1 ([#46](https://github.com/gocloudLa/poc-workflows-python-repo/issues/46)) ([5e58025](https://github.com/gocloudLa/poc-workflows-python-repo/commit/5e58025763f67a931aea09ae29b2f6efeaa0dc72))
+* test flow 2 ([#47](https://github.com/gocloudLa/poc-workflows-python-repo/issues/47)) ([0a66a3a](https://github.com/gocloudLa/poc-workflows-python-repo/commit/0a66a3a65aa61621d493c3ea189b5d81308a41ab))
+* test queue merge ([#43](https://github.com/gocloudLa/poc-workflows-python-repo/issues/43)) ([eaf2b40](https://github.com/gocloudLa/poc-workflows-python-repo/commit/eaf2b409214fd902a66ac39bd9f9944670377563))
+
 # [1.10.0](https://github.com/gocloudLa/poc-workflows-python-repo/compare/v1.9.0...v1.10.0) (2026-01-07)
 
 
