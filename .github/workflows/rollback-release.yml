@@ -37,7 +37,7 @@ jobs:
       service_name: ${{ inputs.service_name }}
       environment: ${{ inputs.environment }}
       rollback_tag: ${{ inputs.rollback_tag }}
-      release_tag_to_delete: ${{ inputs.release_tag_to_delete }}
+      # release_tag_to_delete: ${{ inputs.release_tag_to_delete }}
       target_repository: ${{ inputs.target_repository }}
       target_branch: ${{ inputs.target_branch }}
       values_dir: ${{ inputs.values_dir }}

@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/gocloudLa/poc-workflows-python-repo/compare/v1.7.0...v1.8.0) (2026-01-07)
+
+
+### Features
+
+* remove release tag deletion ([149e4b1](https://github.com/gocloudLa/poc-workflows-python-repo/commit/149e4b1955da34c610a8f4819c9829d7a6ae4a11))
+
 # [1.7.0](https://github.com/gocloudLa/poc-workflows-python-repo/compare/v1.6.0...v1.7.0) (2026-01-06)
 
 
