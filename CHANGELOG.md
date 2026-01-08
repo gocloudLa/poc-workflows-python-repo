@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/gocloudLa/poc-workflows-python-repo/compare/v1.8.0...v1.9.0) (2026-01-07)
+
+
+### Features
+
+* remove relase tag ([4959cd0](https://github.com/gocloudLa/poc-workflows-python-repo/commit/4959cd02e1fa99836dab43e98cf9a403a97ffbcb))
+
 # [1.8.0](https://github.com/gocloudLa/poc-workflows-python-repo/compare/v1.7.0...v1.8.0) (2026-01-07)
 
 

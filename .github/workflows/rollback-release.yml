@@ -7,10 +7,10 @@ on:
         description: 'Release tag to deploy in production (rollback target)'
         required: true
         type: string
-      release_tag_to_delete:
-        description: 'Release tag to delete (bad release)'
-        required: true
-        type: string
+      # release_tag_to_delete:
+      #   description: 'Release tag to delete (bad release)'
+      #   required: true
+      #   type: string
       values_dir:
         description: 'Values folder inside ArgoCD repo'
         required: false
