@@ -16,4 +16,6 @@ permissions:
 jobs:
   pull-request-events:
     uses: gocloudLa/poc-workflows-shared/.github/workflows/shared-pull-request-python.yml@main
+    with:
+      skip_linter: ${{ vars.SKIP_LINTER == 'true' }}
     secrets: inherit
