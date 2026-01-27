@@ -1,3 +1,11 @@
+# [1.14.0](https://github.com/gocloudLa/poc-workflows-python-repo/compare/v1.13.0...v1.14.0) (2026-01-27)
+
+
+### Features
+
+* add test 13 to the README ([#61](https://github.com/gocloudLa/poc-workflows-python-repo/issues/61)) ([4f5be49](https://github.com/gocloudLa/poc-workflows-python-repo/commit/4f5be49e5c275d7c4842cdd5174236a4fffaa470))
+* test e2e ([#62](https://github.com/gocloudLa/poc-workflows-python-repo/issues/62)) ([0930af8](https://github.com/gocloudLa/poc-workflows-python-repo/commit/0930af892360e2521bebb4db1e735625e583fc1d))
+
 # [1.13.0](https://github.com/gocloudLa/poc-workflows-python-repo/compare/v1.12.0...v1.13.0) (2026-01-08)
 
 
