@@ -1,3 +1,11 @@
+# [1.16.0](https://github.com/gocloudLa/poc-workflows-python-repo/compare/v1.15.0...v1.16.0) (2026-01-27)
+
+
+### Features
+
+* add improbe to cicd ([#67](https://github.com/gocloudLa/poc-workflows-python-repo/issues/67)) ([ef796e7](https://github.com/gocloudLa/poc-workflows-python-repo/commit/ef796e75667281051fd45da31cf6d3e4593496eb))
+* add pull request template and demo extra check workflow ([ffb7f8d](https://github.com/gocloudLa/poc-workflows-python-repo/commit/ffb7f8db20ce8b7bdfbae1869f1cb141b504e3fc))
+
 # [1.15.0](https://github.com/gocloudLa/poc-workflows-python-repo/compare/v1.14.0...v1.15.0) (2026-01-27)
 
 
